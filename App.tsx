@@ -35,22 +35,30 @@ export default function App() {
   return (
     <Provider store={store}>
       <MenuProvider>
-        {/*<View style={styles.container}>*/}
         <View style={styles.titleWrapper}>
           {screen === screens.BUCalculator && <Text style={styles.title}>Калькулятор ХЕ</Text>}
           {screen === screens.Second && <Text style={styles.title}>Другой калькулятор </Text>}
 
           <Menu>
-            {/*<MenuTrigger customStyles={{triggerText: {fontSize: 20, fontWeight: 'bold'}}} text={'МЕНЮ'}/>*/}
             <MenuTrigger>
               <Image style={styles.img} source={require('./assets/menu4x.png')}/>
             </MenuTrigger>
-            <MenuOptions customStyles={{optionsContainer: {width: '80%'}}}>
+            <MenuOptions customStyles={{
+              optionsContainer: {
+                width: '80%',
+                backgroundColor: colors.mainBackground,
+                borderWidth: 1,
+                borderRadius: 8,
+                borderColor: colors.borderColor,
+              }
+            }}>
               <MenuOption onSelect={() => setScreen(screens.BUCalculator)}>
-                <Text style={{fontSize: 20, fontWeight: 'bold', padding: 5}}>КАЛЬКУЛЯТОР ХЕ</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold', padding: 5, color: colors.secondText}}>Калькулятор
+                  ХЕ</Text>
               </MenuOption>
               <MenuOption onSelect={() => setScreen(screens.Second)}>
-                <Text style={{fontSize: 20, fontWeight: 'bold', padding: 5}}>ДРУГОЙ КАЛЬКУЛЯТОР</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold', padding: 5, color: colors.secondText}}>Другой
+                  калькулятор</Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
@@ -58,7 +66,6 @@ export default function App() {
         </View>
         {screen === screens.BUCalculator && <BUCalculator/>}
         {screen === screens.Second && <Second/>}
-        {/*</View>*/}
       </MenuProvider>
     </Provider>
   );
