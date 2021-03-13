@@ -6,7 +6,7 @@ const initialState: TProductState = {
 };
 
 const userSlice = createSlice({
-  name: "product",
+  name: "xe",
   initialState,
   reducers: {
     addProduct(state: TProductState, action: PayloadAction<TProduct>) {

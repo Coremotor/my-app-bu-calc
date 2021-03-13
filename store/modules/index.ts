@@ -1,2 +1,3 @@
-export { default as product } from './product/reducer'
+export { default as xe } from './xe/reducer'
+export { default as bje } from './bje/reducer'
 

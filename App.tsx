@@ -4,8 +4,8 @@ import {store} from "./store/store";
 import {Menu, MenuOption, MenuOptions, MenuProvider, MenuTrigger} from "react-native-popup-menu";
 import {StyleSheet, Text, View, Image} from "react-native";
 
-import Second from "./screens/Second";
-import BUCalculator from "./screens/BUCalculator";
+import BJECalculator from "./screens/BJECalculator";
+import XECalculator from "./screens/XECalculator";
 
 import * as Font from 'expo-font'
 import AppLoading from "expo-app-loading";
@@ -28,8 +28,8 @@ export default function App() {
   //   return <AppLoading startAsync={loadApp} onFinish={() => setReady(true)} onError={()=> console.log('Error')}/>
   // }
   const screens = {
-    BUCalculator: 'BUCalculator',
-    Second: 'Second',
+    BUCalculator: 'XECalculator',
+    Second: 'BJECalculator',
   }
   const [screen, setScreen] = useState(screens.BUCalculator)
   return (
@@ -37,7 +37,7 @@ export default function App() {
       <MenuProvider>
         <View style={styles.titleWrapper}>
           {screen === screens.BUCalculator && <Text style={styles.title}>Калькулятор ХЕ</Text>}
-          {screen === screens.Second && <Text style={styles.title}>Другой калькулятор </Text>}
+          {screen === screens.Second && <Text style={styles.title}>Калькулятор БЖЕ</Text>}
 
           <Menu>
             <MenuTrigger>
@@ -57,15 +57,15 @@ export default function App() {
                   ХЕ</Text>
               </MenuOption>
               <MenuOption onSelect={() => setScreen(screens.Second)}>
-                <Text style={{fontSize: 20, fontWeight: 'bold', padding: 5, color: colors.secondText}}>Другой
-                  калькулятор</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold', padding: 5, color: colors.secondText}}>Калькулятор
+                  БЖЕ</Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
 
         </View>
-        {screen === screens.BUCalculator && <BUCalculator/>}
-        {screen === screens.Second && <Second/>}
+        {screen === screens.BUCalculator && <XECalculator/>}
+        {screen === screens.Second && <BJECalculator/>}
       </MenuProvider>
     </Provider>
   );

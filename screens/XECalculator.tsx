@@ -8,20 +8,20 @@ import {
   TouchableOpacity,
   Keyboard,
 } from "react-native";
-import Card from "../components/Card";
 import {useDispatch, useSelector} from "react-redux";
-import {getProducts} from "../store/modules/product/selectors";
-import {addProduct} from "../store/modules/product/reducer";
+import {getProducts} from "../store/modules/xe/selectors";
+import {addProduct} from "../store/modules/xe/reducer";
 import uuid from "react-native-uuid";
 import {colors, globalStyles} from '../styles/styles'
+import Card from "../components/Card";
 
-export type TFormState = {
+type TFormState = {
   inOneXE: string;
   inOneHundredGrams: string;
   totalWeightProduct: string;
 };
 
-export default function BUCalculator() {
+export default function XECalculator() {
   const dispatch = useDispatch();
 
   const onPressAddProduct = () => {
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flexWrap: "wrap",
-    padding: 10,
+    padding: 5,
   },
   form: {
     width: "100%",

@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/NO_SUGAR.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ccdde8"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,7 +22,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/NO_SUGAR.png",
-        "backgroundColor": "#ccdde8"
+        "backgroundColor": "#ffffff"
       },
       "package": "ru.coremotor"
     },

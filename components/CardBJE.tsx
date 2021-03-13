@@ -4,32 +4,33 @@ import {useDispatch} from "react-redux";
 import {removeProduct} from "../store/modules/xe/reducer";
 import {TProduct} from "../store/modules/xe/types";
 import {colors} from "../styles/styles";
+import {TBJEProduct} from "../store/modules/bje/types";
+import {removeBjeProduct} from "../store/modules/bje/reducer";
 
 type TProps = {
-  card: TProduct;
+  card: TBJEProduct;
 };
 
-export default function Card(props: TProps) {
+export default function CardBJE(props: TProps) {
   const dispatch = useDispatch();
 
   const removeProductOnPress = () => {
-    dispatch(removeProduct(props.card.id));
+    dispatch(removeBjeProduct(props.card.id));
   };
   return (
     <View style={styles.card}>
       <View style={styles.currentValues}>
-        <Text style={styles.currentValueText}>{props.card.inOneXE}&nbsp;уг.</Text>
-        <Text style={styles.currentValueText}>{props.card.inOneHundredGrams}&nbsp;уг.</Text>
-        <Text style={styles.currentValueText}>{props.card.totalWeightProduct}&nbsp;г.</Text>
+        <Text style={styles.currentValueText}>{props.card.caloriesInProduct}&nbsp;ккал.</Text>
+        <Text style={styles.currentValueText}>{props.card.carbohydratesInProduct}&nbsp;г.</Text>
       </View>
+
       <View style={styles.result}>
-        <Text style={styles.resultText}>{props.card.XEInAddedProduct}&nbsp;XE</Text>
+        <Text style={styles.resultText}>{props.card.BJEInAddedProduct}&nbsp;БЖE</Text>
       </View>
 
       <TouchableOpacity style={styles.remove} onPress={removeProductOnPress}>
         <Image style={styles.img} source={require('../assets/delete4x.png')}/>
       </TouchableOpacity>
-
     </View>
   );
 }
