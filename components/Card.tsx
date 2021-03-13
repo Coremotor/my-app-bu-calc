@@ -38,13 +38,12 @@ const styles = StyleSheet.create({
   card: {
     display: "flex",
     flexDirection: "row",
-    width: 154,
-    height: 100,
+    width: "49%",
     borderWidth: 1,
     borderRadius: 8,
     borderColor: colors.borderColor,
     backgroundColor: colors.secondBlue,
-    padding: 10,
+    padding: 5,
     marginBottom: 10,
   },
   currentValues: {
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   },
   currentValueText: {
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: 16,
     color: colors.mainText,
   },
   removeResultWrapper: {
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
   },
   resultText: {
     fontWeight: "bold",
-    fontSize: 28,
+    fontSize: 20,
     color: colors.secondText,
   },
 });
